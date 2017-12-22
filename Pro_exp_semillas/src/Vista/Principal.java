@@ -7,6 +7,8 @@ package Vista;
 
 import Controlador.ControlTrueFalse;
 import Controlador.Grafica;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,6 +21,8 @@ public class Principal extends javax.swing.JFrame {
     DefaultTableModel md;
     String data [][]={};
     String cabeza[]={"Tiempo","Peso"};// para la cabezera
+    int Ti[];
+    int Pe[];
     /**
      * Creates new form Principal
      */
@@ -291,7 +295,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addComponent(Btn_Calcular_T1)
                 .addContainerGap())
         );
@@ -304,6 +308,7 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -314,8 +319,7 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -332,8 +336,8 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -348,8 +352,7 @@ public class Principal extends javax.swing.JFrame {
        
         int pos=0;
         for(int i=0;i<=d_experimento;i=i+i_tiempo){
-            
-         
+        
          String datos[]={Integer.toString(i)};
          md.addRow(datos);
         
@@ -387,17 +390,27 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_Nuevo_CalActionPerformed
 
     private void Btn_Calcular_T1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Calcular_T1ActionPerformed
-        // TODO add your handling code here:
+       int tiempo[]=null;
+       int masa[] = null;
+       
+       
+       
+       
+       // JOptionPane.showMessageDialog(null,String.valueOf(masa[2]));
+
+// TODO add your handling code here:
         
         //// graficamos con los valores
-        int tiempo []={0,15,30,45};
-        int peso []={100,200,70,500};
-        Grafica g= new Grafica("Tiempo", " Peso",7);
-        g.addgraficaDesdeLista(tiempo, peso);
-          g.IniciarGraficaIndividual();
-        
-        
-        
+//        int tiempo []={0,15,30,45};
+//        int peso []={100,80,70,50};
+//        //Llamamos la grafica y enviamos el peso 
+//        Grafica g= new Grafica("MASA","TIEMPO VS PESO  (cargado desde proncipal)",1);
+//        g.addgraficaDesdeLista(tiempo, peso);
+//        g.IniciarGraficaIndividual();
+//        
+//      int filaseleccionada = Tabla_dis.getSelectedRow();
+//      this.Ti[0]=(int) Tabla_dis.getValueAt(filaseleccionada, 0);
+//        JOptionPane.showMessageDialog(null,String.valueOf(Ti[0]));
         
         
     }//GEN-LAST:event_Btn_Calcular_T1ActionPerformed
