@@ -1,0 +1,8 @@
+CREATE table repeticion(
+    id integer (10) PRIMARY KEY AUTO_INCREMENT,
+    contador integer(10),
+    cod_exp_sec varchar(15),
+    FOREIGN KEY (cod_exp_sec) REFERENCES experimento_secado(cod_exp_sec) on DELETE CASCADE
+
+
+);

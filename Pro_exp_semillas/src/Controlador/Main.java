@@ -5,21 +5,26 @@
  */
 package Controlador;
 
-import Vista.Principal;
+
+import Vista.Menu;
+
 
 /**
  *
  * @author Danilo
  */
 public class Main {
-
+ 
+    public  static Menu m=new Menu();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Principal p = new Principal();
-        p.setVisible(true);
+        
+        m.setVisible(true);
+//        Datos_Iniciales d= new Datos_Iniciales();
+//        d.setVisible(true);
     }
     
 }
