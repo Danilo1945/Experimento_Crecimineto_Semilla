@@ -11,7 +11,7 @@ package Modelo;
  */
 public class Datos {
     
-    String direccionBD = "jdbc:mysql://localhost:3306/secado_semilla";
+    String direccionBD = "jdbc:mysql://localhost:3307/secado_semilla";
 //    String direccionBD = "jdbc:mysql://192.168.123.147:3306/seprytsa";
     String usuarioBD = "root";
     String contraBD = "";
