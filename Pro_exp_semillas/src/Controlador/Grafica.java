@@ -201,7 +201,7 @@ public class Grafica {
 //                    }
 public void IniciarGraficaGeneral(JPanel panel_gra) {
 
-        grafica = ChartFactory.createXYLineChart("MASA VS TIEMPO", "TIEMPO", this.TipoSensor, Coleccion, PlotOrientation.VERTICAL, true, true, false);
+        grafica = ChartFactory.createXYLineChart(Nom_Grafica, "TIEMPO", this.TipoSensor, Coleccion, PlotOrientation.VERTICAL, true, true, false);
 
         ChartPanel panel = new ChartPanel(grafica);
         JFrame ventana = new JFrame("GRAFICA GENERAL");

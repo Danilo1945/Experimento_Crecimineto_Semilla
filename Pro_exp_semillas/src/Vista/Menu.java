@@ -34,6 +34,7 @@ public class Menu extends javax.swing.JFrame {
     public int sub_menu_calificaciones=0;
   public   Menu_requerimiento mr = new Menu_requerimiento(null, true);
   public Menu_grafica mg = new Menu_grafica(null, true);
+
    
 //   public Inscripciones ins= new Inscripciones();
     
@@ -101,6 +102,9 @@ public class Menu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btn_Graficas = new rojerusan.RSButtonMetro();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        btn_Datos = new rojerusan.RSButtonMetro();
         sc_ventanas = new javax.swing.JScrollPane();
         panel_master = new javax.swing.JPanel();
 
@@ -237,39 +241,66 @@ public class Menu extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Graficar Experimentos");
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Visualizar Datos");
+
+        btn_Datos.setBackground(new java.awt.Color(27, 108, 155));
+        btn_Datos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Data_View_52px.png"))); // NOI18N
+        btn_Datos.setText("           Datos");
+        btn_Datos.setActionCommand("          ");
+        btn_Datos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DatosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(86, 86, 86)
-                            .addComponent(jLabel4))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel1))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel5))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel3))
-                        .addComponent(btn_Graficas, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
-                        .addComponent(btn_Experimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel6)))
-                .addContainerGap(52, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addComponent(btn_home, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 52, Short.MAX_VALUE)))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addComponent(btn_semilla, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 53, Short.MAX_VALUE)))
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_Datos, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_Experimento, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_Graficas, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_semilla, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_home, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,27 +309,27 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(36, 36, 36)
                 .addComponent(jLabel5)
-                .addGap(117, 117, 117)
-                .addComponent(jLabel1)
-                .addGap(88, 88, 88)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_Experimento, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jLabel6)
                 .addGap(18, 18, 18)
+                .addComponent(btn_home, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_semilla, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_Datos, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_Experimento, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_Graficas, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(750, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(112, 112, 112)
-                    .addComponent(btn_home, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1116, Short.MAX_VALUE)))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(246, 246, 246)
-                    .addComponent(btn_semilla, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(982, Short.MAX_VALUE)))
+                .addGap(40, 40, 40)
+                .addComponent(jLabel7)
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         sc_menu.setViewportView(jPanel3);
@@ -311,10 +342,7 @@ public class Menu extends javax.swing.JFrame {
         );
         panel_menuLayout.setVerticalGroup(
             panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_menuLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(sc_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(sc_menu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
         );
 
         panel_master.setBackground(new java.awt.Color(255, 255, 255));
@@ -441,6 +469,17 @@ Panel_Home p_home = new Panel_Home();
  mg.setVisible(true);
     }//GEN-LAST:event_btn_GraficasActionPerformed
 
+    private void btn_DatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DatosActionPerformed
+        // TODO add your handling code here:
+          // TODO add your handling code here:
+          // TODO add your handling code here:
+        pintar(5);
+
+        DatosExperimentos de = new DatosExperimentos();
+        new cambia_panel(panel_master, de);
+        
+    }//GEN-LAST:event_btn_DatosActionPerformed
+
     public void pintar(int pos_mouse) {
         int pos = pos_mouse;
         Color c_precionado = new java.awt.Color(21, 96, 136);
@@ -450,7 +489,9 @@ Panel_Home p_home = new Panel_Home();
             btn_home.setBackground(c_precionado);              //1
                 btn_semilla.setBackground(c_sinprecionar);   //2
             btn_Experimento.setBackground(c_sinprecionar);      //3
-            btn_Graficas.setBackground(c_sinprecionar);       //4
+            btn_Graficas.setBackground(c_sinprecionar);  
+            btn_Datos.setBackground(c_sinprecionar);
+//4
 //            btn_docente.setBackground(c_sinprecionar);         //5
 //
 //            btn_estudents.setBackground(c_sinprecionar);       //6
@@ -473,6 +514,7 @@ Panel_Home p_home = new Panel_Home();
             btn_semilla.setBackground(c_precionado);   //2
             btn_Experimento.setBackground(c_sinprecionar);      //3
             btn_Graficas.setBackground(c_sinprecionar);       //4
+             btn_Datos.setBackground(c_sinprecionar);
 //            btn_docente.setBackground(c_sinprecionar);         //5
 //
 //            btn_estudents.setBackground(c_sinprecionar);       //6
@@ -495,7 +537,7 @@ Panel_Home p_home = new Panel_Home();
             btn_semilla.setBackground(c_sinprecionar);   //2
             btn_Experimento.setBackground(c_precionado);      //3
             btn_Graficas.setBackground(c_sinprecionar);       //4
-//            btn_docente.setBackground(c_sinprecionar);         //5
+            btn_Datos.setBackground(c_sinprecionar);      //5
 //
 //            btn_estudents.setBackground(c_sinprecionar);       //6
 //            btn_horarios.setBackground(c_sinprecionar);        //7
@@ -517,7 +559,7 @@ Panel_Home p_home = new Panel_Home();
             btn_semilla.setBackground(c_sinprecionar);   //2
            btn_Experimento.setBackground(c_sinprecionar);      //3
            btn_Graficas.setBackground(c_precionado);       //4
-//            btn_docente.setBackground(c_sinprecionar);         //5
+            btn_Datos.setBackground(c_sinprecionar);    //5
 //
 //            btn_estudents.setBackground(c_sinprecionar);       //6
 //            btn_horarios.setBackground(c_sinprecionar);        //7
@@ -535,11 +577,11 @@ Panel_Home p_home = new Panel_Home();
 
         }
         if (pos == 5) {
-            btn_home.setBackground(c_sinprecionar);              //1
-            btn_semilla.setBackground(c_sinprecionar);   //2
-//            btn_crono_cali.setBackground(c_sinprecionar);      //3
-//            btn_crono_act.setBackground(c_sinprecionar);       //4
-//            btn_docente.setBackground(c_precionado);         //5
+           btn_home.setBackground(c_sinprecionar);              //1
+           btn_semilla.setBackground(c_sinprecionar);   //2
+           btn_Experimento.setBackground(c_sinprecionar);      //3
+           btn_Graficas.setBackground(c_sinprecionar);       //4
+            btn_Datos.setBackground(c_precionado);    //5
 //
 //            btn_estudents.setBackground(c_sinprecionar);       //6
 //            btn_horarios.setBackground(c_sinprecionar);        //7
@@ -805,7 +847,11 @@ Panel_Home p_home = new Panel_Home();
     private void nofocus() {
         btn_menu.setFocusPainted(false);
         btn_Experimento.setFocusPainted(false);;              //1
-        btn_semilla.setFocusPainted(false);   //2
+        btn_semilla.setFocusPainted(false); 
+        btn_Datos.setFocusPainted(false);
+         btn_home.setFocusPainted(false);
+         btn_Graficas.setFocusPainted(false);
+        //2
 //        btn_crono_cali.setFocusPainted(false);      //3
 //        btn_crono_act.setFocusPainted(false);       //4
 //        btn_docente.setFocusPainted(false);      //5
@@ -909,6 +955,7 @@ Panel_Home p_home = new Panel_Home();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojerusan.RSButtonMetro btn_Datos;
     private rojerusan.RSButtonMetro btn_Experimento;
     private rojerusan.RSButtonMetro btn_Graficas;
     private rojerusan.RSButtonMetro btn_home;
@@ -920,6 +967,8 @@ Panel_Home p_home = new Panel_Home();
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

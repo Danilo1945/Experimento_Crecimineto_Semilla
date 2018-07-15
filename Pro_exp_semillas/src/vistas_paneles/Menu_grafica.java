@@ -34,6 +34,8 @@ import tabla.MyScrollbarUI;
  */
 public class Menu_grafica extends javax.swing.JDialog {
 
+    public Menu_TipoGrafica mtg = new Menu_TipoGrafica(null, true);
+
     /**
      * A return status code - returned if Cancel button has been pressed
      */
@@ -60,18 +62,15 @@ public class Menu_grafica extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(this);
-btn_graficar.setEnabled(false);
 
-txt_cod_sem.setText("");
-txt_nombre_semilla.setText("");
-txt_exp_registrados.setText("");
-  txt_ex_regitro.setText("");
-        
-txt_mensaje_exp.setText("");
+        btn_graficar.setEnabled(false);
 
+        txt_cod_sem.setText("");
+        txt_nombre_semilla.setText("");
+        txt_exp_registrados.setText("");
+        txt_ex_regitro.setText("");
 
-
-
+        txt_mensaje_exp.setText("");
 
         //   this. setIconImage(new ImageIcon(getClass().getResource("/Img_menu/SEPRYTSAV_45x45PX.png")).getImage());
 //jScrollPane1.getVerticalScrollBar().setUI(new MyScrollbarUI());
@@ -202,11 +201,16 @@ txt_mensaje_exp.setText("");
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
                         .addComponent(txt_mensaje_exp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_nombre_semilla, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_exp_registrados, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -215,38 +219,34 @@ txt_mensaje_exp.setText("");
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_ex_regitro, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                    .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                                .addComponent(txt_ex_regitro1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(189, 189, 189))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                                .addComponent(btn_graficar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(txt_titu))
-                            .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                                .addComponent(txt_nombre_semilla, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(56, 56, 56))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                        .addComponent(txt_cod_sem, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_cod_est, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(btn_graficar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(txt_cod_sem, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(btn_cod_est, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(txt_titu))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(199, 199, 199)
+                        .addComponent(txt_ex_regitro1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
                 .addComponent(txt_ex_regitro1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_titu)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_cod_sem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_cod_est, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -273,8 +273,8 @@ txt_mensaje_exp.setText("");
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,179 +308,21 @@ txt_mensaje_exp.setText("");
     }//GEN-LAST:event_closeDialog
 
     private void btn_graficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_graficarActionPerformed
-//     pintar(2);
-//        int NumeroExp= Integer.parseInt(txt_exp_registrados.getText().toString());
-//        int suma=NumeroExp+1;
-//        
-//        Esperimento ex = new Esperimento();
-//        ex.txt_nExperimento.setText(String.valueOf(suma));
-//        ex.codigo_semilla=txt_cod_sem.getText().toString();
-//        Main.m.pintar(2);
-//        new cambia_panel(Main.m.panel_master, ex);
-int registros=Integer.parseInt(txt_exp_registrados.getText().toString());
-int num_exp=Integer.parseInt(txt_ex_regitro.getText().toString());
-   if(registros==num_exp){
 
-
-
-
-
-
-        ArrayList<Integer> tiempo1 = new ArrayList();
-        ArrayList<Integer> peso1 = new ArrayList();
-        ArrayList<Integer> tiempo2 = new ArrayList();
-        ArrayList<Integer> peso2 = new ArrayList();
-        ArrayList<Integer> tiempo3 = new ArrayList();
-        ArrayList<Integer> peso3 = new ArrayList();
-        ArrayList<Integer> tiempo4 = new ArrayList();
-        ArrayList<Integer> peso4 = new ArrayList();
-        ArrayList<Integer> tiempo5 = new ArrayList();
-        ArrayList<Integer> peso5 = new ArrayList();
-        ArrayList<Integer> tiempo6 = new ArrayList();
-        ArrayList<Integer> peso6 = new ArrayList();
-        ArrayList<Integer> tiempo7 = new ArrayList();
-        ArrayList<Integer> peso7 = new ArrayList();
-        ArrayList<Integer> tiempo8 = new ArrayList();
-        ArrayList<Integer> peso8 = new ArrayList();
-        ArrayList<Integer> tiempo9 = new ArrayList();
-        ArrayList<Integer> peso9 = new ArrayList();
-        ArrayList<Integer> tiempo10 = new ArrayList();
-        ArrayList<Integer> peso10 = new ArrayList();
-        String Codigo_Semilla = "";
-        Codigo_Semilla = txt_cod_sem.getText().toString();
-        int next = Integer.parseInt(txt_ex_regitro.getText().toString());
-        Statement estado;
-         Grafica gr=new Grafica(null, true);
-        for (int i = 1; i <= next; i++) {
-
-            try {
-                String SQL = "SELECT * FROM `medicion` WHERE `cod_num_exp`= '" + Codigo_Semilla + "." + i + "'";
-                estado = cn.createStatement();
-                ResultSet resultado = estado.executeQuery(SQL);
-                //JOptionPane.showMessageDialog(null, SQL);
-                while (resultado.next()) {
-                    int cod = resultado.getInt(1);
-                    int v_tiempo = resultado.getInt(2);
-                    int v_peso = resultado.getInt(3);
-
-                    String cod_num_exp = resultado.getString(4);
-
-                    if (i == 1) {
-                        tiempo1.add(v_tiempo);
-                        peso1.add(v_peso);
-                    }
-                    if (i == 2) {
-                        tiempo2.add(v_tiempo);
-                        peso2.add(v_peso);
-                    }
-                    if (i == 3) {
-                        tiempo3.add(v_tiempo);
-                        peso3.add(v_peso);
-                    }
-                    if (i == 4) {
-                        tiempo4.add(v_tiempo);
-                        peso4.add(v_peso);
-                    }
-                    if (i == 5) {
-                        tiempo5.add(v_tiempo);
-                        peso5.add(v_peso);
-                    }
-                    if (i == 6) {
-                        tiempo6.add(v_tiempo);
-                        peso6.add(v_peso);
-                    }
-                    if (i == 7) {
-                        tiempo7.add(v_tiempo);
-                        peso7.add(v_peso);
-                    }
-                     if(i==8){
-                        tiempo8.add(v_tiempo);
-                    peso8.add(v_peso);
-                    }
-                    if(i==9){
-                        tiempo9.add(v_tiempo);
-                    peso9.add(v_peso);
-                    }
-                      if(i==10){
-                        tiempo10.add(v_tiempo);
-                    peso10.add(v_peso);
-                    }
-                     
-                }
-
-            } catch (SQLException ex) {
-             
-
-            }
-
-        }
-
-        
-             Controlador.Grafica gra1=new Controlador.Grafica("MASA", "PESO vs TIEMPO",next );
-              gr.txt_nom_semilla.setText(txt_nombre_semilla.getText().toString());
-              gr.txt_num_expe.setText(txt_ex_regitro.getText().toString());
-        if (next ==1) {
-          //  JOptionPane.showMessageDialog(null," entro");
-           
-            
-        gra1.addgrafica(tiempo1, peso1);
-       
-         gra1.IniciarGraficaGeneral(gr.p_grafica);
-        
-        }// fin if
-        if (next ==2) {
-          //  JOptionPane.showMessageDialog(null," entro");
-           
-            
-            
-           gra1.addgrafica2(tiempo1, peso1,tiempo2, peso2);
-       
-           gra1.IniciarGraficaGeneral(gr.p_grafica);
-        
-        }// fin if
-        if (next ==3) {
-          //  JOptionPane.showMessageDialog(null," entro");
-           
-            
-            
-           gra1.addgrafica3(tiempo1, peso1, tiempo2, peso2, tiempo3, peso3);
-      
-         gra1.IniciarGraficaGeneral(gr.p_grafica);
-        
-        }// fin if
-        
-        if (next ==4) {
-          //  JOptionPane.showMessageDialog(null," entro");
-           
-          
-            gra1.addgrafica4(tiempo1, peso1, tiempo2, peso2, tiempo3, peso3, tiempo4, peso4);
-      
-         gra1.IniciarGraficaGeneral(gr.p_grafica);
-        
-        }// fin if
-        
-        if (next ==5) {
-          //  JOptionPane.showMessageDialog(null," entro");
-           
-            
-          
-            gra1.addgrafica5(tiempo1, peso1, tiempo2, peso2, tiempo3, peso3, tiempo4, peso4, tiempo5, peso5);
-      
-         gra1.IniciarGraficaGeneral(gr.p_grafica);
-        
-        }//
-        
-        
-        
-        
-        
-         gr.setVisible(true);
+        int registros = Integer.parseInt(txt_exp_registrados.getText().toString());
+        int num_exp = Integer.parseInt(txt_ex_regitro.getText().toString());
+        if (registros == num_exp) {
+            mtg.txt_exp_registrados = txt_ex_regitro.getText().toString();
+        mtg.txt_ex_regitro = txt_ex_regitro.getText().toString();
+        mtg.txt_cod_sem = txt_cod_sem.getText().toString();
+        mtg.txt_nombre_semilla.setText(txt_nombre_semilla.getText().toString());
+       mtg .setVisible(true);
         doClose(RET_OK);
-   }// fin if
-   else{
-     alerta("Alerta", "Aun faltan Experimentos que Registrar", "/Img_alertas/Error_100px.png");   
- txt_mensaje_exp.setText("¡ Aun Faltan experiementos que registrar para esta semilla!");
-   }
+        }// fin if
+        else {
+            alerta("Alerta", "Aun faltan Experimentos que Registrar", "/Img_alertas/Error_100px.png");
+            txt_mensaje_exp.setText("¡ Aun Faltan experiementos que registrar para esta semilla!");
+        }
     }//GEN-LAST:event_btn_graficarActionPerformed
 
     private void txt_cod_semActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_cod_semActionPerformed
@@ -489,18 +331,18 @@ int num_exp=Integer.parseInt(txt_ex_regitro.getText().toString());
 
     private void btn_cod_estActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cod_estActionPerformed
         // TODO add your handling code here:
-  txt_cod_sem.setText("");
-txt_nombre_semilla.setText("");
-txt_exp_registrados.setText("");
-  txt_ex_regitro.setText("");
-        
-txt_mensaje_exp.setText("");
+        txt_cod_sem.setText("");
+        txt_nombre_semilla.setText("");
+        txt_exp_registrados.setText("");
+        txt_ex_regitro.setText("");
+
+        txt_mensaje_exp.setText("");
         Busqueda_semillas bs = new Busqueda_semillas(null, true);
 
         consutarTabla_Estudiantes(bs.Tabla_Seleccion);
         bs.Entidad = "experimento_secado";
         bs.setVisible(true);
-      
+
     }//GEN-LAST:event_btn_cod_estActionPerformed
     public void consutarTabla_Estudiantes(rojerusan.RSTableMetro Tabla_p) {
 
@@ -534,7 +376,8 @@ txt_mensaje_exp.setText("");
         return respuesta;
 
     }
-public void alerta(String titulo, String texto, String dir_img) {
+
+    public void alerta(String titulo, String texto, String dir_img) {
 
         Alertas wa = new Alertas(null, true);
         wa.txt_titu.setText(titulo);
@@ -544,6 +387,7 @@ public void alerta(String titulo, String texto, String dir_img) {
 
         wa.setVisible(true);
     }
+
     /**
      * @param args the command line arguments
      */

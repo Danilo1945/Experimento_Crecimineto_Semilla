@@ -443,12 +443,7 @@ Txt_Peso.setText("100.12");
                 tiempo.add(Float.parseFloat(Tabla_dis.getValueAt(i, 0).toString()));
                 peso.add(Float.parseFloat(Tabla_dis.getValueAt(i, 1).toString()));
             }
-          
-            
-            
-            
-            
-            
+  
             //gra(fm1, "MASA", "TIEMPO VS PESO  ", 1, tiempo, peso, num_Cuadros);
             Controlador.Grafica g = new Controlador.Grafica("MASA", "TIEMPO VS PESO  ", 1);
             g.addgraficaDesdeLista(tiempo, peso, num_Cuadros);
@@ -490,7 +485,7 @@ Txt_Peso.setText("100.12");
            float valor1=(peso.get(i)-peso.get(i-1)); 
            float valor2=(tiempo.get(i)-tiempo.get(i-1));
            float valor3=((valor1/valor2)*-1);
-           JOptionPane.showMessageDialog(null, valor3);
+          // JOptionPane.showMessageDialog(null, valor3);
            Vel_Per_masa.add(valor3);
          }
          
@@ -590,10 +585,14 @@ Txt_Peso.setText("100.12");
          for (int i = 0; i <= num_Cuadros; i++) { 
             try {
                 PreparedStatement pst;
-                pst = cn.prepareStatement("INSERT INTO `medicion`( `valor_tiempo`, `valor_peso`, `cod_num_exp`) VALUES (?,?,?)");
+                pst = cn.prepareStatement("INSERT INTO `medicion`( `valor_tiempo`, `valor_peso`, `perdida_masa_g`, `perdida_masa_p`, `humedad`, `velo_per_peso`, `cod_num_exp`) VALUES (?,?,?,?,?,?,?)");
                 pst.setString(1, Tabla_dis.getValueAt(i, 0).toString());
                 pst.setString(2, Tabla_dis.getValueAt(i, 1).toString());
-                pst.setString(3, num_exp_general);
+                pst.setFloat(3, Perdida_Masa_G.get(i));
+                pst.setFloat(4, Perdida_Masa_P.get(i));
+                pst.setFloat(5, humedad.get(i));
+                pst.setFloat(6, Vel_Per_masa.get(i));
+                pst.setString(7, num_exp_general);
                 pst.executeUpdate();
      //           JOptionPane.showMessageDialog(null, "se guardo el datos " + Tabla_dis.getValueAt(i, 0).toString() + " y " + Tabla_dis.getValueAt(i, 1).toString());
             } catch (SQLException ex) {
